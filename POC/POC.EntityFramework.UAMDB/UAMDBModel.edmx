@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UAMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccessModule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="appId" Type="int" />
+          <Property Name="GrpId" Type="int" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccGrp">
+          <Key>
+            <PropertyRef Name="usrGrpId" />
+          </Key>
+          <Property Name="usrGrpId" Type="int" Nullable="false" />
+          <Property Name="usrGrp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AuthAudit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TokenId" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="IpAddress" Type="varchar" MaxLength="50" />
+          <Property Name="LastLogin" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblAccGrp">
+          <Key>
+            <PropertyRef Name="accGrpId" />
+          </Key>
+          <Property Name="accGrpId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="accGrpName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCfgItm">
+          <Key>
+            <PropertyRef Name="cfgItmId" />
+          </Key>
+          <Property Name="cfgItmId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cfgItm" Type="varchar" MaxLength="50" />
+          <Property Name="parentCfgItmId" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblLinkEmp">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="empName" Type="varchar" MaxLength="50" />
+          <Property Name="empJobFunc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblUsr">
+          <Key>
+            <PropertyRef Name="usrName" />
+          </Key>
+          <Property Name="usrName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usrEmail" Type="varchar" MaxLength="50" />
+          <Property Name="empId" Type="varchar" MaxLength="50" />
+          <Property Name="usrType" Type="varchar" MaxLength="50" />
+          <Property Name="usrPwd" Type="varchar" MaxLength="50" />
+          <Property Name="isLocked" Type="bit" />
+          <Property Name="usrGrpId" Type="int" />
+          <Property Name="ADPath" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblWf">
+          <Key>
+            <PropertyRef Name="wfId" />
+          </Key>
+          <Property Name="wfId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="wfName" Type="varchar" MaxLength="50" />
+          <Property Name="isAccGrpOrgWf" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblWfStatus">
+          <Key>
+            <PropertyRef Name="wfStatId" />
+          </Key>
+          <Property Name="wfStatId" Type="int" Nullable="false" />
+          <Property Name="wfStat" Type="varchar" MaxLength="50" />
+          <Property Name="isEnd" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblWfStep">
+          <Key>
+            <PropertyRef Name="wfStepId" />
+          </Key>
+          <Property Name="wfStepId" Type="int" Nullable="false" />
+          <Property Name="wfId" Type="varchar" MaxLength="50" />
+          <Property Name="isParalel" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblWfStepAccGrp">
+          <Key>
+            <PropertyRef Name="wfStepAccGrpId" />
+          </Key>
+          <Property Name="wfStepAccGrpId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="wfStepId" Type="int" />
+          <Property Name="accGrpId" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblWfStepTrx">
+          <Key>
+            <PropertyRef Name="wfStepTrxId" />
+          </Key>
+          <Property Name="wfStepTrxId" Type="int" Nullable="false" />
+          <Property Name="wfStepId" Type="int" />
+          <Property Name="wfStatId" Type="int" />
+        </EntityType>
+        <EntityType Name="WorkFlow">
+          <Key>
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="SKU" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovalStatus" Type="varchar" MaxLength="50" />
+          <Property Name="ImageLink" Type="varchar(max)" />
+          <Property Name="ApprovalDptFood" Type="bit" />
+          <Property Name="ApprovalDivBuyer" Type="bit" />
+          <Property Name="DataFilter" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblAccessGroup_tblWorkflowStepAccessGroup' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblAccessGroup_tblWorkflowStepAccessGroup" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblMiddlewareEmployee_tblUser' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblMiddlewareEmployee_tblUser" />-->
+        <Association Name="FK_tblUsr_AccGrp">
+          <End Role="AccGrp" Type="Self.AccGrp" Multiplicity="0..1" />
+          <End Role="tblUsr" Type="Self.tblUsr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccGrp">
+              <PropertyRef Name="usrGrpId" />
+            </Principal>
+            <Dependent Role="tblUsr">
+              <PropertyRef Name="usrGrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflow_tblWorkflowStep' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflow_tblWorkflowStep" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflowStatus_tblWorkflowStepTrx' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflowStatus_tblWorkflowStepTrx" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflowStep_tblWorkflowStepAccessGroup' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflowStep_tblWorkflowStepAccessGroup" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflowStep_tblWorkflowStepTrx' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflowStep_tblWorkflowStepTrx" />-->
+        <Function Name="sp_Authenticate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetAppComponents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GrpName" Type="varchar" Mode="In" />
+          <Parameter Name="AppParent" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="UAMDBModelStoreContainer">
+          <EntitySet Name="AccessModule" EntityType="Self.AccessModule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccGrp" EntityType="Self.AccGrp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AuthAudit" EntityType="Self.AuthAudit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAccGrp" EntityType="Self.tblAccGrp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLinkEmp" EntityType="Self.tblLinkEmp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsr" EntityType="Self.tblUsr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWf" EntityType="Self.tblWf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWfStatus" EntityType="Self.tblWfStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWfStep" EntityType="Self.tblWfStep" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWfStepAccGrp" EntityType="Self.tblWfStepAccGrp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWfStepTrx" EntityType="Self.tblWfStepTrx" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkFlow" EntityType="Self.WorkFlow" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblUsr_AccGrp" Association="Self.FK_tblUsr_AccGrp">
+            <End Role="AccGrp" EntitySet="AccGrp" />
+            <End Role="tblUsr" EntitySet="tblUsr" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UAMDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAccGrp">
+          <Key>
+            <PropertyRef Name="accGrpId" />
+          </Key>
+          <Property Name="accGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="accGrpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCfgItm">
+          <Key>
+            <PropertyRef Name="cfgItmId" />
+          </Key>
+          <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cfgItm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="parentCfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblLinkEmp">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="empJobFunc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblUsr">
+          <Key>
+            <PropertyRef Name="usrName" />
+          </Key>
+          <Property Name="usrName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usrEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="empId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usrType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usrPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isLocked" Type="Boolean" />
+          <Property Name="usrGrpId" Type="Int32" />
+          <NavigationProperty Name="AccGrp" Relationship="UAMDBModel.FK_tblUsr_AccGrp" FromRole="tblUsr" ToRole="AccGrp" />
+          <Property Name="ADPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblWf">
+          <Key>
+            <PropertyRef Name="wfId" />
+          </Key>
+          <Property Name="wfId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wfName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isAccGrpOrgWf" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblWfStatus">
+          <Key>
+            <PropertyRef Name="wfStatId" />
+          </Key>
+          <Property Name="wfStatId" Type="Int32" Nullable="false" />
+          <Property Name="wfStat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isEnd" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblWfStep">
+          <Key>
+            <PropertyRef Name="wfStepId" />
+          </Key>
+          <Property Name="wfStepId" Type="Int32" Nullable="false" />
+          <Property Name="wfId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isParalel" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblWfStepAccGrp">
+          <Key>
+            <PropertyRef Name="wfStepAccGrpId" />
+          </Key>
+          <Property Name="wfStepAccGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wfStepId" Type="Int32" />
+          <Property Name="accGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblWfStepTrx">
+          <Key>
+            <PropertyRef Name="wfStepTrxId" />
+          </Key>
+          <Property Name="wfStepTrxId" Type="Int32" Nullable="false" />
+          <Property Name="wfStepId" Type="Int32" />
+          <Property Name="wfStatId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="UAMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAccGrp" EntityType="Self.tblAccGrp" />
+          <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" />
+          <EntitySet Name="tblLinkEmp" EntityType="Self.tblLinkEmp" />
+          <EntitySet Name="tblUsr" EntityType="Self.tblUsr" />
+          <EntitySet Name="tblWf" EntityType="Self.tblWf" />
+          <EntitySet Name="tblWfStatus" EntityType="Self.tblWfStatus" />
+          <EntitySet Name="tblWfStep" EntityType="Self.tblWfStep" />
+          <EntitySet Name="tblWfStepAccGrp" EntityType="Self.tblWfStepAccGrp" />
+          <EntitySet Name="tblWfStepTrx" EntityType="Self.tblWfStepTrx" />
+          <FunctionImport Name="sp_Authenticate" ReturnType="Collection(String)">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="AccGrp" EntityType="UAMDBModel.AccGrp" />
+          <AssociationSet Name="FK_tblUsr_AccGrp" Association="UAMDBModel.FK_tblUsr_AccGrp">
+            <End Role="AccGrp" EntitySet="AccGrp" />
+            <End Role="tblUsr" EntitySet="tblUsr" />
+          </AssociationSet>
+          <FunctionImport Name="sp_GetAppComponents" ReturnType="Collection(UAMDBModel.sp_GetAppComponents_Result)">
+            <Parameter Name="GrpName" Mode="In" Type="String" />
+            <Parameter Name="AppParent" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="AccessModule" EntityType="UAMDBModel.AccessModule" />
+          <EntitySet Name="WorkFlow" EntityType="UAMDBModel.WorkFlow" />
+          <EntitySet Name="AuthAudit" EntityType="UAMDBModel.AuthAudit" />
+        </EntityContainer>
+        <EntityType Name="AccGrp">
+          <Key>
+            <PropertyRef Name="usrGrpId" />
+          </Key>
+          <Property Name="usrGrpId" Type="Int32" Nullable="false" />
+          <Property Name="usrGrp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblUsr" Relationship="UAMDBModel.FK_tblUsr_AccGrp" FromRole="AccGrp" ToRole="tblUsr" />
+        </EntityType>
+        <Association Name="FK_tblUsr_AccGrp">
+          <End Type="UAMDBModel.AccGrp" Role="AccGrp" Multiplicity="0..1" />
+          <End Type="UAMDBModel.tblUsr" Role="tblUsr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccGrp">
+              <PropertyRef Name="usrGrpId" />
+            </Principal>
+            <Dependent Role="tblUsr">
+              <PropertyRef Name="usrGrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_GetAppComponents_Result">
+          <Property Type="Int32" Name="appId" Nullable="true" />
+          <Property Type="String" Name="appStructTypId" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="IsAuthorized" Nullable="false" MaxLength="3" />
+        </ComplexType>
+        <EntityType Name="AccessModule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="appId" Type="Int32" />
+          <Property Name="GrpId" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlow">
+          <Key>
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="SKU" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImageLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovalDptFood" Type="Boolean" />
+          <Property Name="ApprovalDivBuyer" Type="Boolean" />
+          <Property Name="DataFilter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AuthAudit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TokenId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UAMDBModelStoreContainer" CdmEntityContainer="UAMDBEntities">
+          <EntitySetMapping Name="tblAccGrp">
+            <EntityTypeMapping TypeName="UAMDBModel.tblAccGrp">
+              <MappingFragment StoreEntitySet="tblAccGrp">
+                <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+                <ScalarProperty Name="accGrpName" ColumnName="accGrpName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCfgItm">
+            <EntityTypeMapping TypeName="UAMDBModel.tblCfgItm">
+              <MappingFragment StoreEntitySet="tblCfgItm">
+                <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+                <ScalarProperty Name="cfgItm" ColumnName="cfgItm" />
+                <ScalarProperty Name="parentCfgItmId" ColumnName="parentCfgItmId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLinkEmp">
+            <EntityTypeMapping TypeName="UAMDBModel.tblLinkEmp">
+              <MappingFragment StoreEntitySet="tblLinkEmp">
+                <ScalarProperty Name="empId" ColumnName="empId" />
+                <ScalarProperty Name="empName" ColumnName="empName" />
+                <ScalarProperty Name="empJobFunc" ColumnName="empJobFunc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsr">
+            <EntityTypeMapping TypeName="UAMDBModel.tblUsr">
+              <MappingFragment StoreEntitySet="tblUsr">
+                <ScalarProperty Name="ADPath" ColumnName="ADPath" />
+                <ScalarProperty Name="usrGrpId" ColumnName="usrGrpId" />
+                <ScalarProperty Name="usrName" ColumnName="usrName" />
+                <ScalarProperty Name="usrEmail" ColumnName="usrEmail" />
+                <ScalarProperty Name="empId" ColumnName="empId" />
+                <ScalarProperty Name="usrType" ColumnName="usrType" />
+                <ScalarProperty Name="usrPwd" ColumnName="usrPwd" />
+                <ScalarProperty Name="isLocked" ColumnName="isLocked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWf">
+            <EntityTypeMapping TypeName="UAMDBModel.tblWf">
+              <MappingFragment StoreEntitySet="tblWf">
+                <ScalarProperty Name="wfId" ColumnName="wfId" />
+                <ScalarProperty Name="wfName" ColumnName="wfName" />
+                <ScalarProperty Name="isAccGrpOrgWf" ColumnName="isAccGrpOrgWf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWfStatus">
+            <EntityTypeMapping TypeName="UAMDBModel.tblWfStatus">
+              <MappingFragment StoreEntitySet="tblWfStatus">
+                <ScalarProperty Name="wfStatId" ColumnName="wfStatId" />
+                <ScalarProperty Name="wfStat" ColumnName="wfStat" />
+                <ScalarProperty Name="isEnd" ColumnName="isEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWfStep">
+            <EntityTypeMapping TypeName="UAMDBModel.tblWfStep">
+              <MappingFragment StoreEntitySet="tblWfStep">
+                <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+                <ScalarProperty Name="wfId" ColumnName="wfId" />
+                <ScalarProperty Name="isParalel" ColumnName="isParalel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWfStepAccGrp">
+            <EntityTypeMapping TypeName="UAMDBModel.tblWfStepAccGrp">
+              <MappingFragment StoreEntitySet="tblWfStepAccGrp">
+                <ScalarProperty Name="wfStepAccGrpId" ColumnName="wfStepAccGrpId" />
+                <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+                <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWfStepTrx">
+            <EntityTypeMapping TypeName="UAMDBModel.tblWfStepTrx">
+              <MappingFragment StoreEntitySet="tblWfStepTrx">
+                <ScalarProperty Name="wfStepTrxId" ColumnName="wfStepTrxId" />
+                <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+                <ScalarProperty Name="wfStatId" ColumnName="wfStatId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Authenticate" FunctionName="UAMDBModel.Store.sp_Authenticate" />
+          <EntitySetMapping Name="AccGrp">
+            <EntityTypeMapping TypeName="UAMDBModel.AccGrp">
+              <MappingFragment StoreEntitySet="AccGrp">
+                <ScalarProperty Name="usrGrp" ColumnName="usrGrp" />
+                <ScalarProperty Name="usrGrpId" ColumnName="usrGrpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_GetAppComponents" FunctionName="UAMDBModel.Store.sp_GetAppComponents">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UAMDBModel.sp_GetAppComponents_Result">
+                <ScalarProperty Name="appId" ColumnName="appId" />
+                <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+                <ScalarProperty Name="IsAuthorized" ColumnName="IsAuthorized" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="AccessModule">
+            <EntityTypeMapping TypeName="UAMDBModel.AccessModule">
+              <MappingFragment StoreEntitySet="AccessModule">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="GrpId" ColumnName="GrpId" />
+                <ScalarProperty Name="appId" ColumnName="appId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlow">
+            <EntityTypeMapping TypeName="UAMDBModel.WorkFlow">
+              <MappingFragment StoreEntitySet="WorkFlow">
+                <ScalarProperty Name="DataFilter" ColumnName="DataFilter" />
+                <ScalarProperty Name="ApprovalDivBuyer" ColumnName="ApprovalDivBuyer" />
+                <ScalarProperty Name="ApprovalDptFood" ColumnName="ApprovalDptFood" />
+                <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuthAudit">
+            <EntityTypeMapping TypeName="UAMDBModel.AuthAudit">
+              <MappingFragment StoreEntitySet="AuthAudit">
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

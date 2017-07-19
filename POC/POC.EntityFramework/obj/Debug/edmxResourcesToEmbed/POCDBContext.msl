@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="POCModelStoreContainer" CdmEntityContainer="POCEntities">
+    <EntitySetMapping Name="tblAccGrp">
+      <EntityTypeMapping TypeName="POCModel.tblAccGrp">
+        <MappingFragment StoreEntitySet="tblAccGrp">
+          <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+          <ScalarProperty Name="accGrpName" ColumnName="accGrpName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAppGrp">
+      <EntityTypeMapping TypeName="POCModel.tblAppGrp">
+        <MappingFragment StoreEntitySet="tblAppGrp">
+          <ScalarProperty Name="appGrpId" ColumnName="appGrpId" />
+          <ScalarProperty Name="appGrp" ColumnName="appGrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAppStruct">
+      <EntityTypeMapping TypeName="POCModel.tblAppStruct">
+        <MappingFragment StoreEntitySet="tblAppStruct">
+          <ScalarProperty Name="appStructId" ColumnName="appStructId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+          <ScalarProperty Name="parentAppStructId" ColumnName="parentAppStructId" />
+          <ScalarProperty Name="appStruct" ColumnName="appStruct" />
+          <ScalarProperty Name="appStructVal" ColumnName="appStructVal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAppStructTyp">
+      <EntityTypeMapping TypeName="POCModel.tblAppStructTyp">
+        <MappingFragment StoreEntitySet="tblAppStructTyp">
+          <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+          <ScalarProperty Name="appStructTyp" ColumnName="appStructTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCfgItm">
+      <EntityTypeMapping TypeName="POCModel.tblCfgItm">
+        <MappingFragment StoreEntitySet="tblCfgItm">
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="cfgItm" ColumnName="cfgItm" />
+          <ScalarProperty Name="parentCfgItmId" ColumnName="parentCfgItmId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCfgItmAtb">
+      <EntityTypeMapping TypeName="POCModel.tblCfgItmAtb">
+        <MappingFragment StoreEntitySet="tblCfgItmAtb">
+          <ScalarProperty Name="cfgItmAtbId" ColumnName="cfgItmAtbId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="cfgItmAtbVal" ColumnName="cfgItmAtbVal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCfgItmTypAtb">
+      <EntityTypeMapping TypeName="POCModel.tblCfgItmTypAtb">
+        <MappingFragment StoreEntitySet="tblCfgItmTypAtb">
+          <ScalarProperty Name="cfgItmTypAtbId" ColumnName="cfgItmTypAtbId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="cfgItmTypAtb" ColumnName="cfgItmTypAtb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEvent">
+      <EntityTypeMapping TypeName="POCModel.tblEvent">
+        <MappingFragment StoreEntitySet="tblEvent">
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="event" ColumnName="event" />
+          <ScalarProperty Name="eventTypeId" ColumnName="eventTypeId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEventTyp">
+      <EntityTypeMapping TypeName="POCModel.tblEventTyp">
+        <MappingFragment StoreEntitySet="tblEventTyp">
+          <ScalarProperty Name="eventTypeId" ColumnName="eventTypeId" />
+          <ScalarProperty Name="eventType" ColumnName="eventType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLinkEmp">
+      <EntityTypeMapping TypeName="POCModel.tblLinkEmp">
+        <MappingFragment StoreEntitySet="tblLinkEmp">
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="empName" ColumnName="empName" />
+          <ScalarProperty Name="empJobFunc" ColumnName="empJobFunc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsr">
+      <EntityTypeMapping TypeName="POCModel.tblUsr">
+        <MappingFragment StoreEntitySet="tblUsr">
+          <ScalarProperty Name="usrName" ColumnName="usrName" />
+          <ScalarProperty Name="usrEmail" ColumnName="usrEmail" />
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="usrType" ColumnName="usrType" />
+          <ScalarProperty Name="usrPwd" ColumnName="usrPwd" />
+          <ScalarProperty Name="isLocked" ColumnName="isLocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWf">
+      <EntityTypeMapping TypeName="POCModel.tblWf">
+        <MappingFragment StoreEntitySet="tblWf">
+          <ScalarProperty Name="wfId" ColumnName="wfId" />
+          <ScalarProperty Name="wfName" ColumnName="wfName" />
+          <ScalarProperty Name="isAccGrpOrgWf" ColumnName="isAccGrpOrgWf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStatus">
+      <EntityTypeMapping TypeName="POCModel.tblWfStatus">
+        <MappingFragment StoreEntitySet="tblWfStatus">
+          <ScalarProperty Name="wfStatId" ColumnName="wfStatId" />
+          <ScalarProperty Name="wfStat" ColumnName="wfStat" />
+          <ScalarProperty Name="isEnd" ColumnName="isEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStep">
+      <EntityTypeMapping TypeName="POCModel.tblWfStep">
+        <MappingFragment StoreEntitySet="tblWfStep">
+          <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+          <ScalarProperty Name="wfId" ColumnName="wfId" />
+          <ScalarProperty Name="isParalel" ColumnName="isParalel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStepAccGrp">
+      <EntityTypeMapping TypeName="POCModel.tblWfStepAccGrp">
+        <MappingFragment StoreEntitySet="tblWfStepAccGrp">
+          <ScalarProperty Name="wfStepAccGrpId" ColumnName="wfStepAccGrpId" />
+          <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+          <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStepTrx">
+      <EntityTypeMapping TypeName="POCModel.tblWfStepTrx">
+        <MappingFragment StoreEntitySet="tblWfStepTrx">
+          <ScalarProperty Name="wfStepTrxId" ColumnName="wfStepTrxId" />
+          <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+          <ScalarProperty Name="wfStatId" ColumnName="wfStatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblApp">
+      <EntityTypeMapping TypeName="POCModel.tblApp">
+        <MappingFragment StoreEntitySet="tblApp">
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="appGrpId" ColumnName="appGrpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Authenticate" FunctionName="POCModel.Store.sp_Authenticate" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,9 @@
+<li *ngFor="let menu of MenuList">
+    <a (click)="Route(menu.id)">{{menu.name}}</a>
+    <div *ngIf="menu.children">
+        <ul>
+            <tree [MenuList]="menu.children"></tree>
+        </ul>
+
+    </div>
+</li>

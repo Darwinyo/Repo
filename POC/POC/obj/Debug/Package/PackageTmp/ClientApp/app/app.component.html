@@ -1,0 +1,7 @@
+<div id="wrapper" [hidden]="!isLogged">
+  <nav-menu [userName]="userLogin"></nav-menu>
+  <div id="page-wrapper" class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<user [hidden]="isLogged"></user>

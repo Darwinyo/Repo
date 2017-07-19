@@ -1,0 +1,11 @@
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\POC.ViewModel.dll.config
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\POC.ViewModel.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\POC.ViewModel.pdb
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\EntityFramework.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\Newtonsoft.Json.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\EntityFramework.xml
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Release\Newtonsoft.Json.xml
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\obj\Release\POC.ViewModel.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\obj\Release\POC.ViewModel.pdb

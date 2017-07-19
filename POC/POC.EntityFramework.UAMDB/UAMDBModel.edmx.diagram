@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a24b22fdd6842cdbd3901d270efd9ea" Name="Diagram1">
+        <EntityTypeShape EntityType="UAMDBModel.tblAccGrp" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblCfgItm" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblLinkEmp" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblUsr" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblWf" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblWfStatus" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblWfStep" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblWfStepAccGrp" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.tblWfStepTrx" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAMDBModel.AccGrp" Width="1.5" PointX="0.75" PointY="9.25" />
+        <AssociationConnector Association="UAMDBModel.FK_tblUsr_AccGrp" />
+        <EntityTypeShape EntityType="UAMDBModel.AccessModule" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="UAMDBModel.WorkFlow" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="UAMDBModel.AuthAudit" Width="1.5" PointX="7.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

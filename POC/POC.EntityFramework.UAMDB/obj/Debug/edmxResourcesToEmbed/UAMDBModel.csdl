@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UAMDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAccGrp">
+    <Key>
+      <PropertyRef Name="accGrpId" />
+    </Key>
+    <Property Name="accGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="accGrpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCfgItm">
+    <Key>
+      <PropertyRef Name="cfgItmId" />
+    </Key>
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cfgItm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parentCfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblLinkEmp">
+    <Key>
+      <PropertyRef Name="empId" />
+    </Key>
+    <Property Name="empId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="empName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="empJobFunc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblUsr">
+    <Key>
+      <PropertyRef Name="usrName" />
+    </Key>
+    <Property Name="usrName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usrEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="empId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usrType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usrPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isLocked" Type="Boolean" />
+    <Property Name="usrGrpId" Type="Int32" />
+    <NavigationProperty Name="AccGrp" Relationship="UAMDBModel.FK_tblUsr_AccGrp" FromRole="tblUsr" ToRole="AccGrp" />
+    <Property Name="ADPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblWf">
+    <Key>
+      <PropertyRef Name="wfId" />
+    </Key>
+    <Property Name="wfId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wfName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isAccGrpOrgWf" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWfStatus">
+    <Key>
+      <PropertyRef Name="wfStatId" />
+    </Key>
+    <Property Name="wfStatId" Type="Int32" Nullable="false" />
+    <Property Name="wfStat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isEnd" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWfStep">
+    <Key>
+      <PropertyRef Name="wfStepId" />
+    </Key>
+    <Property Name="wfStepId" Type="Int32" Nullable="false" />
+    <Property Name="wfId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isParalel" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWfStepAccGrp">
+    <Key>
+      <PropertyRef Name="wfStepAccGrpId" />
+    </Key>
+    <Property Name="wfStepAccGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wfStepId" Type="Int32" />
+    <Property Name="accGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblWfStepTrx">
+    <Key>
+      <PropertyRef Name="wfStepTrxId" />
+    </Key>
+    <Property Name="wfStepTrxId" Type="Int32" Nullable="false" />
+    <Property Name="wfStepId" Type="Int32" />
+    <Property Name="wfStatId" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="UAMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAccGrp" EntityType="Self.tblAccGrp" />
+    <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" />
+    <EntitySet Name="tblLinkEmp" EntityType="Self.tblLinkEmp" />
+    <EntitySet Name="tblUsr" EntityType="Self.tblUsr" />
+    <EntitySet Name="tblWf" EntityType="Self.tblWf" />
+    <EntitySet Name="tblWfStatus" EntityType="Self.tblWfStatus" />
+    <EntitySet Name="tblWfStep" EntityType="Self.tblWfStep" />
+    <EntitySet Name="tblWfStepAccGrp" EntityType="Self.tblWfStepAccGrp" />
+    <EntitySet Name="tblWfStepTrx" EntityType="Self.tblWfStepTrx" />
+    <FunctionImport Name="sp_Authenticate" ReturnType="Collection(String)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="AccGrp" EntityType="UAMDBModel.AccGrp" />
+    <AssociationSet Name="FK_tblUsr_AccGrp" Association="UAMDBModel.FK_tblUsr_AccGrp">
+      <End Role="AccGrp" EntitySet="AccGrp" />
+      <End Role="tblUsr" EntitySet="tblUsr" />
+    </AssociationSet>
+    <FunctionImport Name="sp_GetAppComponents" ReturnType="Collection(UAMDBModel.sp_GetAppComponents_Result)">
+      <Parameter Name="GrpName" Mode="In" Type="String" />
+      <Parameter Name="AppParent" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="AccessModule" EntityType="UAMDBModel.AccessModule" />
+    <EntitySet Name="WorkFlow" EntityType="UAMDBModel.WorkFlow" />
+    <EntitySet Name="AuthAudit" EntityType="UAMDBModel.AuthAudit" />
+  </EntityContainer>
+  <EntityType Name="AccGrp">
+    <Key>
+      <PropertyRef Name="usrGrpId" />
+    </Key>
+    <Property Name="usrGrpId" Type="Int32" Nullable="false" />
+    <Property Name="usrGrp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblUsr" Relationship="UAMDBModel.FK_tblUsr_AccGrp" FromRole="AccGrp" ToRole="tblUsr" />
+  </EntityType>
+  <Association Name="FK_tblUsr_AccGrp">
+    <End Type="UAMDBModel.AccGrp" Role="AccGrp" Multiplicity="0..1" />
+    <End Type="UAMDBModel.tblUsr" Role="tblUsr" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccGrp">
+        <PropertyRef Name="usrGrpId" />
+      </Principal>
+      <Dependent Role="tblUsr">
+        <PropertyRef Name="usrGrpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_GetAppComponents_Result">
+    <Property Type="Int32" Name="appId" Nullable="true" />
+    <Property Type="String" Name="appStructTypId" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IsAuthorized" Nullable="false" MaxLength="3" />
+  </ComplexType>
+  <EntityType Name="AccessModule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="appId" Type="Int32" />
+    <Property Name="GrpId" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkFlow">
+    <Key>
+      <PropertyRef Name="SKU" />
+    </Key>
+    <Property Name="SKU" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImageLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalDptFood" Type="Boolean" />
+    <Property Name="ApprovalDivBuyer" Type="Boolean" />
+    <Property Name="DataFilter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AuthAudit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TokenId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

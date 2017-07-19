@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CMDB.dbo.tblApp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblApp">
+          <Key>
+            <PropertyRef Name="appId" />
+          </Key>
+          <Property Name="appId" Type="int" Nullable="false" />
+          <Property Name="cfgItmId" Type="varchar" MaxLength="50" />
+          <Property Name="appGrpId" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblAppGrp">
+          <Key>
+            <PropertyRef Name="appGrpId" />
+          </Key>
+          <Property Name="appGrpId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appGrp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblAppStruct">
+          <Key>
+            <PropertyRef Name="appStructId" />
+          </Key>
+          <Property Name="appStructId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appId" Type="int" />
+          <Property Name="appStructTypId" Type="varchar" MaxLength="50" />
+          <Property Name="parentAppStructId" Type="int" />
+          <Property Name="appStruct" Type="varchar" MaxLength="50" />
+          <Property Name="appStructVal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblAppStructTyp">
+          <Key>
+            <PropertyRef Name="appStructTypId" />
+          </Key>
+          <Property Name="appStructTypId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appStructTyp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCfgItm">
+          <Key>
+            <PropertyRef Name="cfgItmId" />
+          </Key>
+          <Property Name="cfgItmId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cfgItm" Type="varchar" MaxLength="50" />
+          <Property Name="parentCfgItmId" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCfgItmAtb">
+          <Key>
+            <PropertyRef Name="cfgItmAtbId" />
+          </Key>
+          <Property Name="cfgItmAtbId" Type="int" Nullable="false" />
+          <Property Name="cfgItmId" Type="varchar" MaxLength="50" />
+          <Property Name="cfgItmAtbVal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCfgItmTypAtb">
+          <Key>
+            <PropertyRef Name="cfgItmTypAtbId" />
+          </Key>
+          <Property Name="cfgItmTypAtbId" Type="int" Nullable="false" />
+          <Property Name="cfgItmId" Type="varchar" MaxLength="50" />
+          <Property Name="cfgItmTypAtb" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CMDB.dbo.vw_Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_Menu">
+          <Key>
+            <PropertyRef Name="appStructId" />
+            <PropertyRef Name="appStructTypId" />
+          </Key>
+          <Property Name="appStructId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appId" Type="int" />
+          <Property Name="appStructTypId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appStructTyp" Type="varchar" MaxLength="50" />
+          <Property Name="parentAppStructId" Type="int" />
+          <Property Name="appStructVal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_appStructTyp_tblAppStruct' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_appStructTyp_tblAppStruct" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblApp_tblAppStruct' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblApp_tblAppStruct" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblAppGrp_tblApp' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblAppGrp_tblApp" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblCfgItm_tblApp' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblCfgItm_tblApp" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblCfgItm_tblCfgItmAtb' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblCfgItm_tblCfgItmAtb" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblCfgItmStruct_tblCfgItmTypAtb' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblCfgItmStruct_tblCfgItmTypAtb" />-->
+        <Function Name="sp_WorkFlow" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AppId" Type="int" Mode="In" />
+          <Parameter Name="GrpId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="CMDBModelStoreContainer">
+          <EntitySet Name="tblAppGrp" EntityType="Self.tblAppGrp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAppStruct" EntityType="Self.tblAppStruct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAppStructTyp" EntityType="Self.tblAppStructTyp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCfgItmAtb" EntityType="Self.tblCfgItmAtb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCfgItmTypAtb" EntityType="Self.tblCfgItmTypAtb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblApp" EntityType="Self.tblApp" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblApp].[appId] AS [appId], 
+    [tblApp].[cfgItmId] AS [cfgItmId], 
+    [tblApp].[appGrpId] AS [appGrpId]
+    FROM [dbo].[tblApp] AS [tblApp]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Menu" EntityType="Self.vw_Menu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_Menu].[appStructId] AS [appStructId], 
+    [vw_Menu].[appId] AS [appId], 
+    [vw_Menu].[appStructTypId] AS [appStructTypId], 
+    [vw_Menu].[appStructTyp] AS [appStructTyp], 
+    [vw_Menu].[parentAppStructId] AS [parentAppStructId], 
+    [vw_Menu].[appStructVal] AS [appStructVal]
+    FROM [dbo].[vw_Menu] AS [vw_Menu]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CMDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAppGrp">
+          <Key>
+            <PropertyRef Name="appGrpId" />
+          </Key>
+          <Property Name="appGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="appGrp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblAppStruct">
+          <Key>
+            <PropertyRef Name="appStructId" />
+          </Key>
+          <Property Name="appStructId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="appId" Type="Int32" />
+          <Property Name="appStructTypId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="parentAppStructId" Type="Int32" />
+          <Property Name="appStruct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appStructVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblAppStructTyp">
+          <Key>
+            <PropertyRef Name="appStructTypId" />
+          </Key>
+          <Property Name="appStructTypId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="appStructTyp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCfgItm">
+          <Key>
+            <PropertyRef Name="cfgItmId" />
+          </Key>
+          <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cfgItm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="parentCfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCfgItmAtb">
+          <Key>
+            <PropertyRef Name="cfgItmAtbId" />
+          </Key>
+          <Property Name="cfgItmAtbId" Type="Int32" Nullable="false" />
+          <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cfgItmAtbVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCfgItmTypAtb">
+          <Key>
+            <PropertyRef Name="cfgItmTypAtbId" />
+          </Key>
+          <Property Name="cfgItmTypAtbId" Type="Int32" Nullable="false" />
+          <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cfgItmTypAtb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblApp">
+          <Key>
+            <PropertyRef Name="appId" />
+          </Key>
+          <Property Name="appId" Type="Int32" Nullable="false" />
+          <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAppGrp" EntityType="Self.tblAppGrp" />
+          <EntitySet Name="tblAppStruct" EntityType="Self.tblAppStruct" />
+          <EntitySet Name="tblAppStructTyp" EntityType="Self.tblAppStructTyp" />
+          <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" />
+          <EntitySet Name="tblCfgItmAtb" EntityType="Self.tblCfgItmAtb" />
+          <EntitySet Name="tblCfgItmTypAtb" EntityType="Self.tblCfgItmTypAtb" />
+          <EntitySet Name="tblApp" EntityType="Self.tblApp" />
+          <EntitySet Name="vw_Menu" EntityType="CMDBModel.vw_Menu" />
+          <FunctionImport Name="sp_WorkFlow" ReturnType="Collection(CMDBModel.sp_WorkFlow_Result)">
+            <Parameter Name="AppId" Mode="In" Type="Int32" />
+            <Parameter Name="GrpId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="vw_Menu">
+          <Key>
+            <PropertyRef Name="appStructId" />
+            <PropertyRef Name="appStructTypId" />
+          </Key>
+          <Property Name="appStructId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appId" Type="Int32" />
+          <Property Name="appStructTypId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appStructTyp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="parentAppStructId" Type="Int32" />
+          <Property Name="appStructVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="sp_WorkFlow_Result">
+          <Property Type="Int32" Name="SKU" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ApprovalStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ImageLink" Nullable="true" />
+          <Property Type="Boolean" Name="ApprovalDptFood" Nullable="true" />
+          <Property Type="Boolean" Name="ApprovalDivBuyer" Nullable="true" />
+          <Property Type="String" Name="DataFilter" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CMDBModelStoreContainer" CdmEntityContainer="CMDBEntities">
+          <EntitySetMapping Name="tblAppGrp">
+            <EntityTypeMapping TypeName="CMDBModel.tblAppGrp">
+              <MappingFragment StoreEntitySet="tblAppGrp">
+                <ScalarProperty Name="appGrpId" ColumnName="appGrpId" />
+                <ScalarProperty Name="appGrp" ColumnName="appGrp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAppStruct">
+            <EntityTypeMapping TypeName="CMDBModel.tblAppStruct">
+              <MappingFragment StoreEntitySet="tblAppStruct">
+                <ScalarProperty Name="appStructId" ColumnName="appStructId" />
+                <ScalarProperty Name="appId" ColumnName="appId" />
+                <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+                <ScalarProperty Name="parentAppStructId" ColumnName="parentAppStructId" />
+                <ScalarProperty Name="appStruct" ColumnName="appStruct" />
+                <ScalarProperty Name="appStructVal" ColumnName="appStructVal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAppStructTyp">
+            <EntityTypeMapping TypeName="CMDBModel.tblAppStructTyp">
+              <MappingFragment StoreEntitySet="tblAppStructTyp">
+                <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+                <ScalarProperty Name="appStructTyp" ColumnName="appStructTyp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCfgItm">
+            <EntityTypeMapping TypeName="CMDBModel.tblCfgItm">
+              <MappingFragment StoreEntitySet="tblCfgItm">
+                <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+                <ScalarProperty Name="cfgItm" ColumnName="cfgItm" />
+                <ScalarProperty Name="parentCfgItmId" ColumnName="parentCfgItmId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCfgItmAtb">
+            <EntityTypeMapping TypeName="CMDBModel.tblCfgItmAtb">
+              <MappingFragment StoreEntitySet="tblCfgItmAtb">
+                <ScalarProperty Name="cfgItmAtbId" ColumnName="cfgItmAtbId" />
+                <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+                <ScalarProperty Name="cfgItmAtbVal" ColumnName="cfgItmAtbVal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCfgItmTypAtb">
+            <EntityTypeMapping TypeName="CMDBModel.tblCfgItmTypAtb">
+              <MappingFragment StoreEntitySet="tblCfgItmTypAtb">
+                <ScalarProperty Name="cfgItmTypAtbId" ColumnName="cfgItmTypAtbId" />
+                <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+                <ScalarProperty Name="cfgItmTypAtb" ColumnName="cfgItmTypAtb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblApp">
+            <EntityTypeMapping TypeName="CMDBModel.tblApp">
+              <MappingFragment StoreEntitySet="tblApp">
+                <ScalarProperty Name="appId" ColumnName="appId" />
+                <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+                <ScalarProperty Name="appGrpId" ColumnName="appGrpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Menu">
+            <EntityTypeMapping TypeName="CMDBModel.vw_Menu">
+              <MappingFragment StoreEntitySet="vw_Menu">
+                <ScalarProperty Name="appStructVal" ColumnName="appStructVal" />
+                <ScalarProperty Name="parentAppStructId" ColumnName="parentAppStructId" />
+                <ScalarProperty Name="appStructTyp" ColumnName="appStructTyp" />
+                <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+                <ScalarProperty Name="appId" ColumnName="appId" />
+                <ScalarProperty Name="appStructId" ColumnName="appStructId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_WorkFlow" FunctionName="CMDBModel.Store.sp_WorkFlow">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMDBModel.sp_WorkFlow_Result">
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+                <ScalarProperty Name="ApprovalDptFood" ColumnName="ApprovalDptFood" />
+                <ScalarProperty Name="ApprovalDivBuyer" ColumnName="ApprovalDivBuyer" />
+                <ScalarProperty Name="DataFilter" ColumnName="DataFilter" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

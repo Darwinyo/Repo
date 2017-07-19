@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAccGrp">
+    <Key>
+      <PropertyRef Name="accGrpId" />
+    </Key>
+    <Property Name="accGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="accGrpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblAppGrp">
+    <Key>
+      <PropertyRef Name="appGrpId" />
+    </Key>
+    <Property Name="appGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appGrp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblAppStruct">
+    <Key>
+      <PropertyRef Name="appStructId" />
+    </Key>
+    <Property Name="appStructId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appId" Type="Int32" />
+    <Property Name="appStructTypId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parentAppStructId" Type="Int32" />
+    <Property Name="appStruct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appStructVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblAppStructTyp">
+    <Key>
+      <PropertyRef Name="appStructTypId" />
+    </Key>
+    <Property Name="appStructTypId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appStructTyp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCfgItm">
+    <Key>
+      <PropertyRef Name="cfgItmId" />
+    </Key>
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cfgItm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parentCfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCfgItmAtb">
+    <Key>
+      <PropertyRef Name="cfgItmAtbId" />
+    </Key>
+    <Property Name="cfgItmAtbId" Type="Int32" Nullable="false" />
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cfgItmAtbVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCfgItmTypAtb">
+    <Key>
+      <PropertyRef Name="cfgItmTypAtbId" />
+    </Key>
+    <Property Name="cfgItmTypAtbId" Type="Int32" Nullable="false" />
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cfgItmTypAtb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEvent">
+    <Key>
+      <PropertyRef Name="eventId" />
+    </Key>
+    <Property Name="eventId" Type="Int32" Nullable="false" />
+    <Property Name="event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eventTypeId" Type="Int32" />
+    <Property Name="cfgItmId" Type="Int32" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="accGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEventTyp">
+    <Key>
+      <PropertyRef Name="eventTypeId" />
+    </Key>
+    <Property Name="eventTypeId" Type="Int32" Nullable="false" />
+    <Property Name="eventType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblLinkEmp">
+    <Key>
+      <PropertyRef Name="empId" />
+    </Key>
+    <Property Name="empId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="empName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="empJobFunc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblUsr">
+    <Key>
+      <PropertyRef Name="usrName" />
+    </Key>
+    <Property Name="usrName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usrEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="empId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usrType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usrPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isLocked" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWf">
+    <Key>
+      <PropertyRef Name="wfId" />
+    </Key>
+    <Property Name="wfId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wfName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isAccGrpOrgWf" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWfStatus">
+    <Key>
+      <PropertyRef Name="wfStatId" />
+    </Key>
+    <Property Name="wfStatId" Type="Int32" Nullable="false" />
+    <Property Name="wfStat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isEnd" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWfStep">
+    <Key>
+      <PropertyRef Name="wfStepId" />
+    </Key>
+    <Property Name="wfStepId" Type="Int32" Nullable="false" />
+    <Property Name="wfId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isParalel" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWfStepAccGrp">
+    <Key>
+      <PropertyRef Name="wfStepAccGrpId" />
+    </Key>
+    <Property Name="wfStepAccGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wfStepId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="accGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblWfStepTrx">
+    <Key>
+      <PropertyRef Name="wfStepTrxId" />
+    </Key>
+    <Property Name="wfStepTrxId" Type="Int32" Nullable="false" />
+    <Property Name="wfStepId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wfStatId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblApp">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="POCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAccGrp" EntityType="Self.tblAccGrp" />
+    <EntitySet Name="tblAppGrp" EntityType="Self.tblAppGrp" />
+    <EntitySet Name="tblAppStruct" EntityType="Self.tblAppStruct" />
+    <EntitySet Name="tblAppStructTyp" EntityType="Self.tblAppStructTyp" />
+    <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" />
+    <EntitySet Name="tblCfgItmAtb" EntityType="Self.tblCfgItmAtb" />
+    <EntitySet Name="tblCfgItmTypAtb" EntityType="Self.tblCfgItmTypAtb" />
+    <EntitySet Name="tblEvent" EntityType="Self.tblEvent" />
+    <EntitySet Name="tblEventTyp" EntityType="Self.tblEventTyp" />
+    <EntitySet Name="tblLinkEmp" EntityType="Self.tblLinkEmp" />
+    <EntitySet Name="tblUsr" EntityType="Self.tblUsr" />
+    <EntitySet Name="tblWf" EntityType="Self.tblWf" />
+    <EntitySet Name="tblWfStatus" EntityType="Self.tblWfStatus" />
+    <EntitySet Name="tblWfStep" EntityType="Self.tblWfStep" />
+    <EntitySet Name="tblWfStepAccGrp" EntityType="Self.tblWfStepAccGrp" />
+    <EntitySet Name="tblWfStepTrx" EntityType="Self.tblWfStepTrx" />
+    <EntitySet Name="tblApp" EntityType="Self.tblApp" />
+    <FunctionImport Name="sp_Authenticate" ReturnType="Collection(String)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

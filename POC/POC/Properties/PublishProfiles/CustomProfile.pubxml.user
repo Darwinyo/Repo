@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\POC</_PublishTargetUrl>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include=".angular-cli.json">
+      <publishTime>07/05/2017 14:17:31</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/04/2017 14:44:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/04/2017 14:44:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/13/2016 17:10:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/06/2012 01:08:46</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/18/2017 13:57:10</publishTime>
+    </File>
+    <File Include="bin/POC.BusinessLogic.dll">
+      <publishTime>07/17/2017 16:43:50</publishTime>
+    </File>
+    <File Include="bin/POC.BusinessLogic.dll.config">
+      <publishTime>07/05/2017 12:30:11</publishTime>
+    </File>
+    <File Include="bin/POC.BusinessLogic.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/POC.Configuration.dll">
+      <publishTime>07/17/2017 16:43:47</publishTime>
+    </File>
+    <File Include="bin/POC.Configuration.dll.config">
+      <publishTime>07/14/2017 10:27:00</publishTime>
+    </File>
+    <File Include="bin/POC.Configuration.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/POC.dll">
+      <publishTime>07/17/2017 16:47:16</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.CMDB.dll">
+      <publishTime>07/17/2017 16:43:50</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.CMDB.dll.config">
+      <publishTime>07/08/2017 19:51:06</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.CMDB.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.EMDB.dll">
+      <publishTime>07/17/2017 16:43:48</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.EMDB.dll.config">
+      <publishTime>07/06/2017 16:52:24</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.EMDB.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.UAMDB.dll">
+      <publishTime>07/17/2017 16:43:49</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.UAMDB.dll.config">
+      <publishTime>07/06/2017 16:40:00</publishTime>
+    </File>
+    <File Include="bin/POC.EntityFramework.UAMDB.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/POC.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/POC.ViewModel.dll">
+      <publishTime>07/17/2017 16:43:47</publishTime>
+    </File>
+    <File Include="bin/POC.ViewModel.dll.config">
+      <publishTime>07/05/2017 12:30:04</publishTime>
+    </File>
+    <File Include="bin/POC.ViewModel.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/28/2016 04:50:24</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/28/2015 18:02:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>01/28/2015 04:01:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 18:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>01/28/2015 04:03:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/28/2015 18:02:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/28/2015 18:03:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 18:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 18:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 18:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 18:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 18:04:30</publishTime>
+    </File>
+    <File Include="ClientApp/app/app.component.html">
+      <publishTime>07/13/2017 20:32:37</publishTime>
+    </File>
+    <File Include="ClientApp/app/app.component.scss">
+      <publishTime>07/13/2017 20:33:08</publishTime>
+    </File>
+    <File Include="ClientApp/app/components/navmenu/navmenu.component.html">
+      <publishTime>07/13/2017 11:01:59</publishTime>
+    </File>
+    <File Include="ClientApp/app/components/navmenu/navmenu.component.scss">
+      <publishTime>07/13/2017 15:02:16</publishTime>
+    </File>
+    <File Include="ClientApp/app/components/sidenavmenu/sidenavmenu.component.html">
+      <publishTime>07/10/2017 21:09:52</publishTime>
+    </File>
+    <File Include="ClientApp/app/components/sidenavmenu/sidenavmenu.component.scss">
+      <publishTime>07/13/2017 15:18:02</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/dumb/home/home.component.html">
+      <publishTime>07/13/2017 11:01:10</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/dumb/login/login.component.html">
+      <publishTime>07/06/2017 11:07:18</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/dumb/page-not-found/page-not-found.component.html">
+      <publishTime>07/04/2017 13:46:06</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/dumb/tree-view/tree-view.component.html">
+      <publishTime>07/13/2017 11:12:28</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/manageApproval/general-info.component.html">
+      <publishTime>07/14/2017 08:49:52</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/manageApproval/general-info.component.scss">
+      <publishTime>07/13/2017 20:40:34</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/manageProposal/general-info.component.html">
+      <publishTime>07/14/2017 08:49:42</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/manageProposal/general-info.component.scss">
+      <publishTime>07/13/2017 20:40:45</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/tree/tree.component.html">
+      <publishTime>07/11/2017 15:37:57</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/tree/tree.component.scss">
+      <publishTime>07/10/2017 21:36:38</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/user/user.component.html">
+      <publishTime>07/13/2017 15:41:32</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/viewDetails/general-info.component.html">
+      <publishTime>07/13/2017 21:06:05</publishTime>
+    </File>
+    <File Include="ClientApp/app/containers/smart/viewDetails/general-info.component.scss">
+      <publishTime>07/13/2017 20:40:50</publishTime>
+    </File>
+    <File Include="ClientApp/assets/.gitkeep">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="ClientApp/favicon.ico">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="ClientApp/styles.css">
+      <publishTime>07/05/2017 17:00:52</publishTime>
+    </File>
+    <File Include="ClientApp/tsconfig.app.json">
+      <publishTime>07/05/2017 14:17:31</publishTime>
+    </File>
+    <File Include="ClientApp/tsconfig.spec.json">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="dist/bootstrap.min.css">
+      <publishTime>07/05/2017 17:05:57</publishTime>
+    </File>
+    <File Include="dist/favicon.ico">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/font-awesome.min.css">
+      <publishTime>07/05/2017 20:23:10</publishTime>
+    </File>
+    <File Include="dist/index.html">
+      <publishTime>07/05/2017 15:04:47</publishTime>
+    </File>
+    <File Include="dist/inline.bundle.js">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/inline.bundle.js.map">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/main.bundle.js">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/main.bundle.js.map">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/actions/components/components-access.action.js">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/actions/components/components-access.action.js.map">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/actions/login/login.action.js">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/actions/login/login.action.js.map">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/actions/menu/module-access.action.js">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/actions/menu/module-access.action.js.map">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/app.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/app.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/app.component.spec.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/app.component.spec.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/app.module.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/app.module.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/components/navmenu/navmenu.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/components/navmenu/navmenu.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/components/sidenavmenu/sidenavmenu.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/components/sidenavmenu/sidenavmenu.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/consts/route.const.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/consts/route.const.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/consts/user-route.const.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/consts/user-route.const.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/home/home.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/home/home.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/login/login.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/login/login.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/page-not-found/page-not-found.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/page-not-found/page-not-found.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/tree-view/tree-view.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/dumb/tree-view/tree-view.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/manageApproval/general-info.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/manageApproval/general-info.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/manageProposal/general-info.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/manageProposal/general-info.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/tree/tree.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/tree/tree.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/user/user.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/user/user.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/viewDetails/general-info.component.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/containers/smart/viewDetails/general-info.component.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/guards/auth.guard.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/guards/auth.guard.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/components-fetch.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/components-fetch.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/components-return.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/components-return.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/data-filter.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/data-filter.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/menu-group-authorize.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/menu-group-authorize.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/menu.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/menu/menu.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/user-login/user-login-state.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/user-login/user-login-state.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/user-login/user-login.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/models/user-login/user-login.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/modules/user.module.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/modules/user.module.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/reducers/components/components.reducer.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/reducers/components/components.reducer.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/reducers/login/login.reducer.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/reducers/login/login.reducer.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/reducers/menu/module-access.reducer.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/reducers/menu/module-access.reducer.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/routes/app-route.module.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/routes/app-route.module.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/routes/user-route.module.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/routes/user-route.module.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/services/authorize/user-login.service.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/services/authorize/user-login.service.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/services/menu/module-access.service.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/services/menu/module-access.service.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/components/component.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/components/component.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/components/components-state.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/components/components-state.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/login/models/login-state.model.js">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/login/models/login-state.model.js.map">
+      <publishTime>07/17/2017 16:47:05</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/menu/models/array-module-access.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/menu/models/array-module-access.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/menu/models/module-access.model.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/app/states/menu/models/module-access.model.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/businessLogic/menu/menu.logic.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/businessLogic/menu/menu.logic.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/environments/environment.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/environments/environment.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/environments/environment.prod.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/environments/environment.prod.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/main.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/main.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/polyfills.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/polyfills.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/test.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/ClientApp/test.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/e2e/app.e2e-spec.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/e2e/app.e2e-spec.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/e2e/app.po.js">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/out-tsc/e2e/app.po.js.map">
+      <publishTime>07/17/2017 16:47:06</publishTime>
+    </File>
+    <File Include="dist/polyfills.bundle.js">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/polyfills.bundle.js.map">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/sb-admin-2.min.css">
+      <publishTime>07/05/2017 17:06:22</publishTime>
+    </File>
+    <File Include="dist/styles.bundle.js">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/styles.bundle.js.map">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/vendor.bundle.js">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="dist/vendor.bundle.js.map">
+      <publishTime>07/14/2017 08:56:22</publishTime>
+    </File>
+    <File Include="e2e/tsconfig.e2e.json">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/04/2017 12:45:49</publishTime>
+    </File>
+    <File Include="images/146302f2-ce26-4624-9378-7a62ee4afbee.gif">
+      <publishTime>07/06/2017 20:32:59</publishTime>
+    </File>
+    <File Include="images/192a9a88-27f8-447d-9828-db5ecf832b06.jpg">
+      <publishTime>07/06/2017 20:32:59</publishTime>
+    </File>
+    <File Include="images/70c0cc5e-1c56-4fea-8ac8-80b679ca458c.jpg">
+      <publishTime>07/06/2017 20:32:59</publishTime>
+    </File>
+    <File Include="images/7eafe702-82ce-433f-a916-b05e4dce9b5f.png">
+      <publishTime>07/06/2017 20:32:59</publishTime>
+    </File>
+    <File Include="images/e7440cfe-2673-4ad7-9da4-c3b4d90e311f.gif">
+      <publishTime>07/06/2017 20:32:59</publishTime>
+    </File>
+    <File Include="images/e885a6bc-1bd9-41a8-bcf2-d5ea836f8330.png">
+      <publishTime>07/06/2017 20:32:59</publishTime>
+    </File>
+    <File Include="images/fc0f7ca9-cf7b-42b0-8196-92f9fe58590c.jpg">
+      <publishTime>07/06/2017 20:33:00</publishTime>
+    </File>
+    <File Include="images/Super_Indo.png">
+      <publishTime>07/13/2017 09:41:56</publishTime>
+    </File>
+    <File Include="karma.conf.js">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="package.json">
+      <publishTime>07/13/2017 10:56:27</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/10/2017 09:33:20</publishTime>
+    </File>
+    <File Include="protractor.conf.js">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="tsconfig.json">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="tslint.json">
+      <publishTime>07/04/2017 09:30:34</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>07/10/2017 09:33:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>07/13/2017 10:59:20</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>07/04/2017 12:45:39</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>07/04/2017 13:30:57</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/17/2017 16:44:11</publishTime>
+    </File>
+    <File Include="webpack.config.js">
+      <publishTime>07/05/2017 15:24:19</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

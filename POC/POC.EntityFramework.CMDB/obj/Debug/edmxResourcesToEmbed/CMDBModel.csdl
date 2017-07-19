@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAppGrp">
+    <Key>
+      <PropertyRef Name="appGrpId" />
+    </Key>
+    <Property Name="appGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appGrp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblAppStruct">
+    <Key>
+      <PropertyRef Name="appStructId" />
+    </Key>
+    <Property Name="appStructId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appId" Type="Int32" />
+    <Property Name="appStructTypId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parentAppStructId" Type="Int32" />
+    <Property Name="appStruct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appStructVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblAppStructTyp">
+    <Key>
+      <PropertyRef Name="appStructTypId" />
+    </Key>
+    <Property Name="appStructTypId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appStructTyp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCfgItm">
+    <Key>
+      <PropertyRef Name="cfgItmId" />
+    </Key>
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cfgItm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parentCfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCfgItmAtb">
+    <Key>
+      <PropertyRef Name="cfgItmAtbId" />
+    </Key>
+    <Property Name="cfgItmAtbId" Type="Int32" Nullable="false" />
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cfgItmAtbVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCfgItmTypAtb">
+    <Key>
+      <PropertyRef Name="cfgItmTypAtbId" />
+    </Key>
+    <Property Name="cfgItmTypAtbId" Type="Int32" Nullable="false" />
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cfgItmTypAtb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblApp">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="cfgItmId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appGrpId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAppGrp" EntityType="Self.tblAppGrp" />
+    <EntitySet Name="tblAppStruct" EntityType="Self.tblAppStruct" />
+    <EntitySet Name="tblAppStructTyp" EntityType="Self.tblAppStructTyp" />
+    <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" />
+    <EntitySet Name="tblCfgItmAtb" EntityType="Self.tblCfgItmAtb" />
+    <EntitySet Name="tblCfgItmTypAtb" EntityType="Self.tblCfgItmTypAtb" />
+    <EntitySet Name="tblApp" EntityType="Self.tblApp" />
+    <EntitySet Name="vw_Menu" EntityType="CMDBModel.vw_Menu" />
+    <FunctionImport Name="sp_WorkFlow" ReturnType="Collection(CMDBModel.sp_WorkFlow_Result)">
+      <Parameter Name="AppId" Mode="In" Type="Int32" />
+      <Parameter Name="GrpId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="vw_Menu">
+    <Key>
+      <PropertyRef Name="appStructId" />
+      <PropertyRef Name="appStructTypId" />
+    </Key>
+    <Property Name="appStructId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appId" Type="Int32" />
+    <Property Name="appStructTypId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appStructTyp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parentAppStructId" Type="Int32" />
+    <Property Name="appStructVal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="sp_WorkFlow_Result">
+    <Property Type="Int32" Name="SKU" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ApprovalStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ImageLink" Nullable="true" />
+    <Property Type="Boolean" Name="ApprovalDptFood" Nullable="true" />
+    <Property Type="Boolean" Name="ApprovalDivBuyer" Nullable="true" />
+    <Property Type="String" Name="DataFilter" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

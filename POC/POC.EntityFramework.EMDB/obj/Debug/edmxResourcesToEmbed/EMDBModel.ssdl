@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblEvent">
+    <Key>
+      <PropertyRef Name="eventId" />
+    </Key>
+    <Property Name="eventId" Type="int" Nullable="false" />
+    <Property Name="event" Type="varchar" MaxLength="50" />
+    <Property Name="eventTypeId" Type="int" />
+    <Property Name="cfgItmId" Type="varchar" MaxLength="50" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="accGrpId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblEventTyp">
+    <Key>
+      <PropertyRef Name="eventTypeId" />
+    </Key>
+    <Property Name="eventTypeId" Type="int" Nullable="false" />
+    <Property Name="eventType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="EMDBModelStoreContainer">
+    <EntitySet Name="tblEvent" EntityType="Self.tblEvent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEventTyp" EntityType="Self.tblEventTyp" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

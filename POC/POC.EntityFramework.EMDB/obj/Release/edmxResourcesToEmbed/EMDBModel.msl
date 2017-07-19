@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMDBModelStoreContainer" CdmEntityContainer="EMDBEntities">
+    <EntitySetMapping Name="tblEvent">
+      <EntityTypeMapping TypeName="EMDBModel.tblEvent">
+        <MappingFragment StoreEntitySet="tblEvent">
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="event" ColumnName="event" />
+          <ScalarProperty Name="eventTypeId" ColumnName="eventTypeId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEventTyp">
+      <EntityTypeMapping TypeName="EMDBModel.tblEventTyp">
+        <MappingFragment StoreEntitySet="tblEventTyp">
+          <ScalarProperty Name="eventTypeId" ColumnName="eventTypeId" />
+          <ScalarProperty Name="eventType" ColumnName="eventType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

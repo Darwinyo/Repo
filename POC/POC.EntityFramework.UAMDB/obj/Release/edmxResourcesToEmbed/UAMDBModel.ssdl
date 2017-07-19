@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UAMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccessModule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="appId" Type="int" />
+    <Property Name="GrpId" Type="int" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccGrp">
+    <Key>
+      <PropertyRef Name="usrGrpId" />
+    </Key>
+    <Property Name="usrGrpId" Type="int" Nullable="false" />
+    <Property Name="usrGrp" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAccGrp">
+    <Key>
+      <PropertyRef Name="accGrpId" />
+    </Key>
+    <Property Name="accGrpId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="accGrpName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCfgItm">
+    <Key>
+      <PropertyRef Name="cfgItmId" />
+    </Key>
+    <Property Name="cfgItmId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cfgItm" Type="varchar" MaxLength="50" />
+    <Property Name="parentCfgItmId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblLinkEmp">
+    <Key>
+      <PropertyRef Name="empId" />
+    </Key>
+    <Property Name="empId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="empName" Type="varchar" MaxLength="50" />
+    <Property Name="empJobFunc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblUsr">
+    <Key>
+      <PropertyRef Name="usrName" />
+    </Key>
+    <Property Name="usrName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usrEmail" Type="varchar" MaxLength="50" />
+    <Property Name="empId" Type="varchar" MaxLength="50" />
+    <Property Name="usrType" Type="varchar" MaxLength="50" />
+    <Property Name="usrPwd" Type="varchar" MaxLength="50" />
+    <Property Name="isLocked" Type="bit" />
+    <Property Name="usrGrpId" Type="int" />
+    <Property Name="ADPath" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblWf">
+    <Key>
+      <PropertyRef Name="wfId" />
+    </Key>
+    <Property Name="wfId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="wfName" Type="varchar" MaxLength="50" />
+    <Property Name="isAccGrpOrgWf" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblWfStatus">
+    <Key>
+      <PropertyRef Name="wfStatId" />
+    </Key>
+    <Property Name="wfStatId" Type="int" Nullable="false" />
+    <Property Name="wfStat" Type="varchar" MaxLength="50" />
+    <Property Name="isEnd" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblWfStep">
+    <Key>
+      <PropertyRef Name="wfStepId" />
+    </Key>
+    <Property Name="wfStepId" Type="int" Nullable="false" />
+    <Property Name="wfId" Type="varchar" MaxLength="50" />
+    <Property Name="isParalel" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblWfStepAccGrp">
+    <Key>
+      <PropertyRef Name="wfStepAccGrpId" />
+    </Key>
+    <Property Name="wfStepAccGrpId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="wfStepId" Type="int" />
+    <Property Name="accGrpId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblWfStepTrx">
+    <Key>
+      <PropertyRef Name="wfStepTrxId" />
+    </Key>
+    <Property Name="wfStepTrxId" Type="int" Nullable="false" />
+    <Property Name="wfStepId" Type="int" />
+    <Property Name="wfStatId" Type="int" />
+  </EntityType>
+  <EntityType Name="WorkFlow">
+    <Key>
+      <PropertyRef Name="SKU" />
+    </Key>
+    <Property Name="SKU" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovalStatus" Type="varchar" MaxLength="50" />
+    <Property Name="ImageLink" Type="varchar(max)" />
+    <Property Name="ApprovalDptFood" Type="bit" />
+    <Property Name="ApprovalDivBuyer" Type="bit" />
+    <Property Name="DataFilter" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblAccessGroup_tblWorkflowStepAccessGroup' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblAccessGroup_tblWorkflowStepAccessGroup" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblMiddlewareEmployee_tblUser' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblMiddlewareEmployee_tblUser" />-->
+  <Association Name="FK_tblUsr_AccGrp">
+    <End Role="AccGrp" Type="Self.AccGrp" Multiplicity="0..1" />
+    <End Role="tblUsr" Type="Self.tblUsr" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccGrp">
+        <PropertyRef Name="usrGrpId" />
+      </Principal>
+      <Dependent Role="tblUsr">
+        <PropertyRef Name="usrGrpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflow_tblWorkflowStep' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflow_tblWorkflowStep" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflowStatus_tblWorkflowStepTrx' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflowStatus_tblWorkflowStepTrx" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflowStep_tblWorkflowStepAccessGroup' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflowStep_tblWorkflowStepAccessGroup" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblWorkflowStep_tblWorkflowStepTrx' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblWorkflowStep_tblWorkflowStepTrx" />-->
+  <Function Name="sp_Authenticate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAppComponents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GrpName" Type="varchar" Mode="In" />
+    <Parameter Name="AppParent" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="UAMDBModelStoreContainer">
+    <EntitySet Name="AccessModule" EntityType="Self.AccessModule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccGrp" EntityType="Self.AccGrp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAccGrp" EntityType="Self.tblAccGrp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLinkEmp" EntityType="Self.tblLinkEmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsr" EntityType="Self.tblUsr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWf" EntityType="Self.tblWf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWfStatus" EntityType="Self.tblWfStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWfStep" EntityType="Self.tblWfStep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWfStepAccGrp" EntityType="Self.tblWfStepAccGrp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWfStepTrx" EntityType="Self.tblWfStepTrx" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkFlow" EntityType="Self.WorkFlow" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblUsr_AccGrp" Association="Self.FK_tblUsr_AccGrp">
+      <End Role="AccGrp" EntitySet="AccGrp" />
+      <End Role="tblUsr" EntitySet="tblUsr" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

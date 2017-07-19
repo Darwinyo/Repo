@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA8ECAA0-6CFF-466A-AB27-5AFE0CB24385}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POC.EntityFramework.UAMDB</RootNamespace>
+    <AssemblyName>POC.EntityFramework.UAMDB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessModule.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccGrp.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthAudit.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extend\AccessModule.cs" />
+    <Compile Include="Extend\AccGrp.cs" />
+    <Compile Include="Extend\AuthAudit.cs" />
+    <Compile Include="Extend\UAMDBEntities.cs" />
+    <Compile Include="Extend\tblUsr.cs" />
+    <Compile Include="Extend\WorkFlow.cs" />
+    <Compile Include="GetEFCS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_GetAppComponents_Result.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAccGrp.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCfgItm.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLinkEmp.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUsr.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWf.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWfStatus.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWfStep.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWfStepAccGrp.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWfStepTrx.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAMDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UAMDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAMDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAMDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UAMDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlow.cs">
+      <DependentUpon>UAMDBModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="UAMDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UAMDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="UAMDBModel.edmx.diagram">
+      <DependentUpon>UAMDBModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UAMDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UAMDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>UAMDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="UAMDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UAMDBModel.edmx</DependentUpon>
+      <LastGenOutput>UAMDBModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POC.Configuration\POC.Configuration.csproj">
+      <Project>{1ca957e3-f5ba-4612-bc2b-7e1de6174ea8}</Project>
+      <Name>POC.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POC.ViewModel\POC.ViewModel.csproj">
+      <Project>{90916c23-bee2-4f02-86e8-3bd1fbd2d152}</Project>
+      <Name>POC.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

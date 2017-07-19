@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CMDB.dbo.tblApp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblApp">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="int" Nullable="false" />
+    <Property Name="cfgItmId" Type="varchar" MaxLength="50" />
+    <Property Name="appGrpId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAppGrp">
+    <Key>
+      <PropertyRef Name="appGrpId" />
+    </Key>
+    <Property Name="appGrpId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appGrp" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAppStruct">
+    <Key>
+      <PropertyRef Name="appStructId" />
+    </Key>
+    <Property Name="appStructId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appId" Type="int" />
+    <Property Name="appStructTypId" Type="varchar" MaxLength="50" />
+    <Property Name="parentAppStructId" Type="int" />
+    <Property Name="appStruct" Type="varchar" MaxLength="50" />
+    <Property Name="appStructVal" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAppStructTyp">
+    <Key>
+      <PropertyRef Name="appStructTypId" />
+    </Key>
+    <Property Name="appStructTypId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appStructTyp" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCfgItm">
+    <Key>
+      <PropertyRef Name="cfgItmId" />
+    </Key>
+    <Property Name="cfgItmId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cfgItm" Type="varchar" MaxLength="50" />
+    <Property Name="parentCfgItmId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCfgItmAtb">
+    <Key>
+      <PropertyRef Name="cfgItmAtbId" />
+    </Key>
+    <Property Name="cfgItmAtbId" Type="int" Nullable="false" />
+    <Property Name="cfgItmId" Type="varchar" MaxLength="50" />
+    <Property Name="cfgItmAtbVal" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCfgItmTypAtb">
+    <Key>
+      <PropertyRef Name="cfgItmTypAtbId" />
+    </Key>
+    <Property Name="cfgItmTypAtbId" Type="int" Nullable="false" />
+    <Property Name="cfgItmId" Type="varchar" MaxLength="50" />
+    <Property Name="cfgItmTypAtb" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CMDB.dbo.vw_Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_Menu">
+    <Key>
+      <PropertyRef Name="appStructId" />
+      <PropertyRef Name="appStructTypId" />
+    </Key>
+    <Property Name="appStructId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appId" Type="int" />
+    <Property Name="appStructTypId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appStructTyp" Type="varchar" MaxLength="50" />
+    <Property Name="parentAppStructId" Type="int" />
+    <Property Name="appStructVal" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_appStructTyp_tblAppStruct' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_appStructTyp_tblAppStruct" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblApp_tblAppStruct' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblApp_tblAppStruct" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblAppGrp_tblApp' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblAppGrp_tblApp" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblCfgItm_tblApp' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblCfgItm_tblApp" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblCfgItm_tblCfgItmAtb' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblCfgItm_tblCfgItmAtb" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_tblCfgItmStruct_tblCfgItmTypAtb' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_tblCfgItmStruct_tblCfgItmTypAtb" />-->
+  <Function Name="sp_WorkFlow" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AppId" Type="int" Mode="In" />
+    <Parameter Name="GrpId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="CMDBModelStoreContainer">
+    <EntitySet Name="tblAppGrp" EntityType="Self.tblAppGrp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAppStruct" EntityType="Self.tblAppStruct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAppStructTyp" EntityType="Self.tblAppStructTyp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCfgItm" EntityType="Self.tblCfgItm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCfgItmAtb" EntityType="Self.tblCfgItmAtb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCfgItmTypAtb" EntityType="Self.tblCfgItmTypAtb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblApp" EntityType="Self.tblApp" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblApp].[appId] AS [appId], 
+    [tblApp].[cfgItmId] AS [cfgItmId], 
+    [tblApp].[appGrpId] AS [appGrpId]
+    FROM [dbo].[tblApp] AS [tblApp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_Menu" EntityType="Self.vw_Menu" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_Menu].[appStructId] AS [appStructId], 
+    [vw_Menu].[appId] AS [appId], 
+    [vw_Menu].[appStructTypId] AS [appStructTypId], 
+    [vw_Menu].[appStructTyp] AS [appStructTyp], 
+    [vw_Menu].[parentAppStructId] AS [parentAppStructId], 
+    [vw_Menu].[appStructVal] AS [appStructVal]
+    FROM [dbo].[vw_Menu] AS [vw_Menu]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

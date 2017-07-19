@@ -1,0 +1,15 @@
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\POC.EntityFramework.EMDB.dll.config
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\POC.EntityFramework.EMDB.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\POC.EntityFramework.EMDB.pdb
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\EntityFramework.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\Newtonsoft.Json.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\POC.Configuration.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\POC.Configuration.pdb
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\EntityFramework.xml
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\Newtonsoft.Json.xml
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\obj\Release\POC.EntityFramework.EMDB.csprojResolveAssemblyReference.cache
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\obj\Release\POC.EntityFramework.EMDB.dll
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\obj\Release\POC.EntityFramework.EMDB.pdb
+C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.EMDB\bin\Release\POC.Configuration.dll.config

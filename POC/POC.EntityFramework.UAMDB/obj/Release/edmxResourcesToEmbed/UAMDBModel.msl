@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UAMDBModelStoreContainer" CdmEntityContainer="UAMDBEntities">
+    <EntitySetMapping Name="tblAccGrp">
+      <EntityTypeMapping TypeName="UAMDBModel.tblAccGrp">
+        <MappingFragment StoreEntitySet="tblAccGrp">
+          <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+          <ScalarProperty Name="accGrpName" ColumnName="accGrpName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCfgItm">
+      <EntityTypeMapping TypeName="UAMDBModel.tblCfgItm">
+        <MappingFragment StoreEntitySet="tblCfgItm">
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="cfgItm" ColumnName="cfgItm" />
+          <ScalarProperty Name="parentCfgItmId" ColumnName="parentCfgItmId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLinkEmp">
+      <EntityTypeMapping TypeName="UAMDBModel.tblLinkEmp">
+        <MappingFragment StoreEntitySet="tblLinkEmp">
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="empName" ColumnName="empName" />
+          <ScalarProperty Name="empJobFunc" ColumnName="empJobFunc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsr">
+      <EntityTypeMapping TypeName="UAMDBModel.tblUsr">
+        <MappingFragment StoreEntitySet="tblUsr">
+          <ScalarProperty Name="ADPath" ColumnName="ADPath" />
+          <ScalarProperty Name="usrGrpId" ColumnName="usrGrpId" />
+          <ScalarProperty Name="usrName" ColumnName="usrName" />
+          <ScalarProperty Name="usrEmail" ColumnName="usrEmail" />
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="usrType" ColumnName="usrType" />
+          <ScalarProperty Name="usrPwd" ColumnName="usrPwd" />
+          <ScalarProperty Name="isLocked" ColumnName="isLocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWf">
+      <EntityTypeMapping TypeName="UAMDBModel.tblWf">
+        <MappingFragment StoreEntitySet="tblWf">
+          <ScalarProperty Name="wfId" ColumnName="wfId" />
+          <ScalarProperty Name="wfName" ColumnName="wfName" />
+          <ScalarProperty Name="isAccGrpOrgWf" ColumnName="isAccGrpOrgWf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStatus">
+      <EntityTypeMapping TypeName="UAMDBModel.tblWfStatus">
+        <MappingFragment StoreEntitySet="tblWfStatus">
+          <ScalarProperty Name="wfStatId" ColumnName="wfStatId" />
+          <ScalarProperty Name="wfStat" ColumnName="wfStat" />
+          <ScalarProperty Name="isEnd" ColumnName="isEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStep">
+      <EntityTypeMapping TypeName="UAMDBModel.tblWfStep">
+        <MappingFragment StoreEntitySet="tblWfStep">
+          <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+          <ScalarProperty Name="wfId" ColumnName="wfId" />
+          <ScalarProperty Name="isParalel" ColumnName="isParalel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStepAccGrp">
+      <EntityTypeMapping TypeName="UAMDBModel.tblWfStepAccGrp">
+        <MappingFragment StoreEntitySet="tblWfStepAccGrp">
+          <ScalarProperty Name="wfStepAccGrpId" ColumnName="wfStepAccGrpId" />
+          <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+          <ScalarProperty Name="accGrpId" ColumnName="accGrpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWfStepTrx">
+      <EntityTypeMapping TypeName="UAMDBModel.tblWfStepTrx">
+        <MappingFragment StoreEntitySet="tblWfStepTrx">
+          <ScalarProperty Name="wfStepTrxId" ColumnName="wfStepTrxId" />
+          <ScalarProperty Name="wfStepId" ColumnName="wfStepId" />
+          <ScalarProperty Name="wfStatId" ColumnName="wfStatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Authenticate" FunctionName="UAMDBModel.Store.sp_Authenticate" />
+    <EntitySetMapping Name="AccGrp">
+      <EntityTypeMapping TypeName="UAMDBModel.AccGrp">
+        <MappingFragment StoreEntitySet="AccGrp">
+          <ScalarProperty Name="usrGrp" ColumnName="usrGrp" />
+          <ScalarProperty Name="usrGrpId" ColumnName="usrGrpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAppComponents" FunctionName="UAMDBModel.Store.sp_GetAppComponents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UAMDBModel.sp_GetAppComponents_Result">
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+          <ScalarProperty Name="IsAuthorized" ColumnName="IsAuthorized" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="AccessModule">
+      <EntityTypeMapping TypeName="UAMDBModel.AccessModule">
+        <MappingFragment StoreEntitySet="AccessModule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="GrpId" ColumnName="GrpId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkFlow">
+      <EntityTypeMapping TypeName="UAMDBModel.WorkFlow">
+        <MappingFragment StoreEntitySet="WorkFlow">
+          <ScalarProperty Name="DataFilter" ColumnName="DataFilter" />
+          <ScalarProperty Name="ApprovalDivBuyer" ColumnName="ApprovalDivBuyer" />
+          <ScalarProperty Name="ApprovalDptFood" ColumnName="ApprovalDptFood" />
+          <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

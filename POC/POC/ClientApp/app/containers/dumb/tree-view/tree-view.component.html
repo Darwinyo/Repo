@@ -1,0 +1,4 @@
+<div *ngIf="menuList">
+    <!--<tree [MenuList]="menuList"></tree>-->
+    <p-tree [value]="files" selectionMode="single" [(selection)]="selectedFile" (onNodeSelect)="nodeSelect($event)"></p-tree>
+</div>

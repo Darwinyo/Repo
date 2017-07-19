@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMDBModelStoreContainer" CdmEntityContainer="CMDBEntities">
+    <EntitySetMapping Name="tblAppGrp">
+      <EntityTypeMapping TypeName="CMDBModel.tblAppGrp">
+        <MappingFragment StoreEntitySet="tblAppGrp">
+          <ScalarProperty Name="appGrpId" ColumnName="appGrpId" />
+          <ScalarProperty Name="appGrp" ColumnName="appGrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAppStruct">
+      <EntityTypeMapping TypeName="CMDBModel.tblAppStruct">
+        <MappingFragment StoreEntitySet="tblAppStruct">
+          <ScalarProperty Name="appStructId" ColumnName="appStructId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+          <ScalarProperty Name="parentAppStructId" ColumnName="parentAppStructId" />
+          <ScalarProperty Name="appStruct" ColumnName="appStruct" />
+          <ScalarProperty Name="appStructVal" ColumnName="appStructVal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAppStructTyp">
+      <EntityTypeMapping TypeName="CMDBModel.tblAppStructTyp">
+        <MappingFragment StoreEntitySet="tblAppStructTyp">
+          <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+          <ScalarProperty Name="appStructTyp" ColumnName="appStructTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCfgItm">
+      <EntityTypeMapping TypeName="CMDBModel.tblCfgItm">
+        <MappingFragment StoreEntitySet="tblCfgItm">
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="cfgItm" ColumnName="cfgItm" />
+          <ScalarProperty Name="parentCfgItmId" ColumnName="parentCfgItmId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCfgItmAtb">
+      <EntityTypeMapping TypeName="CMDBModel.tblCfgItmAtb">
+        <MappingFragment StoreEntitySet="tblCfgItmAtb">
+          <ScalarProperty Name="cfgItmAtbId" ColumnName="cfgItmAtbId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="cfgItmAtbVal" ColumnName="cfgItmAtbVal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCfgItmTypAtb">
+      <EntityTypeMapping TypeName="CMDBModel.tblCfgItmTypAtb">
+        <MappingFragment StoreEntitySet="tblCfgItmTypAtb">
+          <ScalarProperty Name="cfgItmTypAtbId" ColumnName="cfgItmTypAtbId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="cfgItmTypAtb" ColumnName="cfgItmTypAtb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblApp">
+      <EntityTypeMapping TypeName="CMDBModel.tblApp">
+        <MappingFragment StoreEntitySet="tblApp">
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="cfgItmId" ColumnName="cfgItmId" />
+          <ScalarProperty Name="appGrpId" ColumnName="appGrpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Menu">
+      <EntityTypeMapping TypeName="CMDBModel.vw_Menu">
+        <MappingFragment StoreEntitySet="vw_Menu">
+          <ScalarProperty Name="appStructVal" ColumnName="appStructVal" />
+          <ScalarProperty Name="parentAppStructId" ColumnName="parentAppStructId" />
+          <ScalarProperty Name="appStructTyp" ColumnName="appStructTyp" />
+          <ScalarProperty Name="appStructTypId" ColumnName="appStructTypId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="appStructId" ColumnName="appStructId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_WorkFlow" FunctionName="CMDBModel.Store.sp_WorkFlow">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CMDBModel.sp_WorkFlow_Result">
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+          <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+          <ScalarProperty Name="ApprovalDptFood" ColumnName="ApprovalDptFood" />
+          <ScalarProperty Name="ApprovalDivBuyer" ColumnName="ApprovalDivBuyer" />
+          <ScalarProperty Name="DataFilter" ColumnName="DataFilter" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
