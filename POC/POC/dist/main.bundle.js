@@ -56,7 +56,7 @@ var NOT_PERMITTED = 'NOT_PERMITTED';
 /***/ "./ClientApp/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"wrapper\" [hidden]=\"!isLogged\">\n  <nav-menu [userName]=\"userLogin\"></nav-menu>\n  <div id=\"page-wrapper\" class=\"container-fluid\">\n    <router-outlet></router-outlet>\n  </div>\n</div>\n<user [hidden]=\"isLogged\"></user>"
+module.exports = "<div id=\"wrapper\" [hidden]=\"!isLogged\">\r\n  <nav-menu (Logout)=\"LogoutEventHandler($event)\" [userName]=\"userLogin\"></nav-menu>\r\n  <div id=\"page-wrapper\" class=\"container-fluid\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n<user [hidden]=\"isLogged\"></user>"
 
 /***/ }),
 
@@ -112,12 +112,16 @@ var AppComponent = (function () {
         this.loginStateObservable = this.store.select('login');
     }
     AppComponent.prototype.ngOnChanges = function (changes) {
-        var _this = this;
-        this.authService.sessionUser(localStorage.getItem('tokenid').toString()).subscribe(function (x) { return (_this.authToken = x); }, function (err) { return console.log(err); }, function () {
-            if (_this.authToken == true) {
-                _this.CheckUserToken(_this.authToken);
-            }
-        });
+        // this.authService.sessionUser(localStorage.getItem('tokenid').toString()).subscribe(
+        // 	(x) => (this.authToken = x),
+        // 	(err) => console.log(err),
+        // 	() => {
+        // 		if (this.authToken == true) {
+        // 			this.CheckUserToken(this.authToken);
+        // 		}
+        // 	}
+        // )
+        console.log('ngChange called');
     };
     AppComponent.prototype.CheckUserToken = function (bool) {
         if (bool) {
@@ -129,9 +133,14 @@ var AppComponent = (function () {
             this.store.dispatch({ type: __WEBPACK_IMPORTED_MODULE_2__actions_login_login_action__["c" /* LOAD_SESSION */], payload: sessionState });
         }
     };
+    AppComponent.prototype.LogoutEventHandler = function (event) {
+        this.isLogged = event;
+    };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.authService.sessionUser(localStorage.getItem('tokenid').toString()).subscribe(function (x) { return (_this.authToken = x); }, function (err) { return console.log(err); }, function () {
+        var tokenId = {};
+        tokenId.TokenId = localStorage.getItem('tokenid');
+        this.authService.sessionUser(tokenId).subscribe(function (x) { return (_this.authToken = x); }, function (err) { return console.log(err); }, function () {
             if (_this.authToken == true) {
                 _this.CheckUserToken(_this.authToken);
             }
@@ -327,6 +336,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var NavMenuComponent = (function () {
     function NavMenuComponent(store) {
         this.store = store;
+        this.Logout = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.userState = this.store.select('login');
     }
     NavMenuComponent.prototype.SignOut = function () {
@@ -336,10 +346,15 @@ var NavMenuComponent = (function () {
         user.UserLoginState = __WEBPACK_IMPORTED_MODULE_2__actions_login_login_action__["b" /* NOT_AUTHORIZED */];
         user.UserName = null;
         localStorage.clear();
+        this.Logout.emit(false);
         this.store.dispatch({ type: __WEBPACK_IMPORTED_MODULE_2__actions_login_login_action__["b" /* NOT_AUTHORIZED */], payload: user });
     };
     return NavMenuComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], NavMenuComponent.prototype, "Logout", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", String)
@@ -1520,7 +1535,9 @@ var AuthGuard = (function () {
     }
     AuthGuard.prototype.canActivate = function (route, state) {
         if (localStorage.getItem('tokenid')) {
-            if (this.authService.sessionUser(localStorage.getItem('tokenid'))) {
+            var tokenId = {};
+            tokenId.TokenId = localStorage.getItem('tokenid');
+            if (this.authService.sessionUser(tokenId)) {
                 return true;
             }
             return false;
@@ -1688,6 +1705,7 @@ var UserLoginService = (function () {
     UserLoginService.prototype.sessionUser = function (tokenId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
+        console.log(tokenId);
         return this.http
             .post('http://localhost:51150/api/APIAuthentication/SessionAuth/', tokenId, { headers: headers })
             .map(function (result) { return result.json(); });

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Container-Dumb
 var home_component_1 = require("../containers/dumb/home/home.component");
 var page_not_found_component_1 = require("../containers/dumb/page-not-found/page-not-found.component");

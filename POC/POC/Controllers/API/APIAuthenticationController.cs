@@ -37,10 +37,6 @@ namespace POC.Controllers.API
         [HttpPost]
         public bool SessionAuth([FromBody] object value)
         {
-            if (value == null)
-            {
-                return false;
-            }
             return AuthenticateUserLogic.SessionAuth(value);
         }
 

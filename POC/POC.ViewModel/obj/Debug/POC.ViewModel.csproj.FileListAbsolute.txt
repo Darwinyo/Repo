@@ -10,3 +10,15 @@ C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\bin\Debu
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\obj\Debug\POC.ViewModel.dll
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\obj\Debug\POC.ViewModel.pdb
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.ViewModel\obj\Debug\POC.ViewModel.csprojResolveAssemblyReference.cache
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\POC.ViewModel.dll.config
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\POC.ViewModel.dll
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\POC.ViewModel.pdb
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\EntityFramework.dll
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\Newtonsoft.Json.dll
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\EntityFramework.xml
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Project\Repo\POC\POC.ViewModel\bin\Debug\Newtonsoft.Json.xml
+C:\Project\Repo\POC\POC.ViewModel\obj\Debug\POC.ViewModel.csprojResolveAssemblyReference.cache
+C:\Project\Repo\POC\POC.ViewModel\obj\Debug\POC.ViewModel.dll
+C:\Project\Repo\POC\POC.ViewModel\obj\Debug\POC.ViewModel.pdb

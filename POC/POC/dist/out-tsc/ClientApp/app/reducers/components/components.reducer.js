@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var components_state_model_1 = require("../../states/components/components-state.model");
 var ComponentsAccessAction = require("../../actions/components/components-access.action");
 function ComponentsReducer(state, action) {

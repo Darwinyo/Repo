@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var user_login_service_1 = require("../services/authorize/user-login.service");
@@ -18,7 +19,9 @@ var AuthGuard = (function () {
     }
     AuthGuard.prototype.canActivate = function (route, state) {
         if (localStorage.getItem('tokenid')) {
-            if (this.authService.sessionUser(localStorage.getItem('tokenid'))) {
+            var tokenId = {};
+            tokenId.TokenId = localStorage.getItem('tokenid');
+            if (this.authService.sessionUser(tokenId)) {
                 return true;
             }
             return false;

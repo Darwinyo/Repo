@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,EventEmitter,Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
 
@@ -13,6 +13,7 @@ import { UserLoginStateModel } from '../../models/user-login/user-login-state.mo
 	styleUrls: [ './navmenu.component.scss' ]
 })
 export class NavMenuComponent {
+	@Output() Logout=new EventEmitter<boolean>();
 	userState: Observable<LoginStateModel>;
 	constructor(private store: Store<LoginStateModel>) {
 		this.userState = this.store.select('login');
@@ -25,6 +26,7 @@ export class NavMenuComponent {
 		user.UserLoginState = LoginActions.NOT_AUTHORIZED;
 		user.UserName = null;
 		localStorage.clear();
+		this.Logout.emit(false);
 		this.store.dispatch({ type: LoginActions.NOT_AUTHORIZED, payload: user });
 	}
 }

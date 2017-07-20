@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var app_po_1 = require("./app.po");
 describe('angular-cli App', function () {
     var page;

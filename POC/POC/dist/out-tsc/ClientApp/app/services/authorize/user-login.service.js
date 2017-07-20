@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 // Angular Dependencies
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
@@ -30,6 +31,7 @@ var UserLoginService = (function () {
     UserLoginService.prototype.sessionUser = function (tokenId) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
+        console.log(tokenId);
         return this.http
             .post('http://localhost:51150/api/APIAuthentication/SessionAuth/', tokenId, { headers: headers })
             .map(function (result) { return result.json(); });

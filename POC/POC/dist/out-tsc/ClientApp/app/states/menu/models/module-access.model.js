@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ModuleAccessAction = require("../../../actions/menu/module-access.action");
 exports.INITIAL_STATE = {
     ModuleId: undefined,

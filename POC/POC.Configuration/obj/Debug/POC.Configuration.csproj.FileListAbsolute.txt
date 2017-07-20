@@ -10,3 +10,15 @@ C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.Configuration\bin\
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.Configuration\bin\Debug\EntityFramework.xml
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.Configuration\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.Configuration\obj\Debug\POC.Configuration.csprojResolveAssemblyReference.cache
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\POC.Configuration.dll.config
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\POC.Configuration.dll
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\POC.Configuration.pdb
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\EntityFramework.dll
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\Newtonsoft.Json.dll
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\EntityFramework.xml
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\EntityFramework.SqlServer.xml
+C:\Project\Repo\POC\POC.Configuration\bin\Debug\Newtonsoft.Json.xml
+C:\Project\Repo\POC\POC.Configuration\obj\Debug\POC.Configuration.csprojResolveAssemblyReference.cache
+C:\Project\Repo\POC\POC.Configuration\obj\Debug\POC.Configuration.dll
+C:\Project\Repo\POC\POC.Configuration\obj\Debug\POC.Configuration.pdb

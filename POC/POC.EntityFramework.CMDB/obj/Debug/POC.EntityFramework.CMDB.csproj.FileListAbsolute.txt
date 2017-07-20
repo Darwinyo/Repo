@@ -13,3 +13,18 @@ C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.CM
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.CMDB\obj\Debug\POC.EntityFramework.CMDB.dll
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.CMDB\obj\Debug\POC.EntityFramework.CMDB.pdb
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.EntityFramework.CMDB\bin\Debug\POC.Configuration.dll.config
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\POC.EntityFramework.CMDB.dll.config
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\POC.EntityFramework.CMDB.dll
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\POC.EntityFramework.CMDB.pdb
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\EntityFramework.dll
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\Newtonsoft.Json.dll
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\POC.Configuration.dll
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\POC.Configuration.pdb
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\POC.Configuration.dll.config
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\EntityFramework.xml
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\bin\Debug\Newtonsoft.Json.xml
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\obj\Debug\POC.EntityFramework.CMDB.csprojResolveAssemblyReference.cache
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\obj\Debug\POC.EntityFramework.CMDB.dll
+C:\Project\Repo\POC\POC.EntityFramework.CMDB\obj\Debug\POC.EntityFramework.CMDB.pdb

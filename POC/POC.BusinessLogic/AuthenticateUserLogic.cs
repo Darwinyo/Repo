@@ -102,7 +102,11 @@ namespace POC.BusinessLogic
         public static bool SessionAuth(object value)
         {
             JObject obj = (JObject)value;
-            Guid tokenId = Guid.Parse(obj.ToString());
+            Guid tokenId = Guid.Empty;
+            if (!Guid.TryParse(obj["TokenId"].ToString(),out tokenId))
+            {
+                return false;
+            }
             if (AuthAudit.GetAuth(tokenId) != null)
             {
                 return true;

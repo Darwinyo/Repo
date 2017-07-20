@@ -25,3 +25,30 @@ C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.BusinessLogic\obj\
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.BusinessLogic\obj\Debug\POC.BusinessLogic.dll
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.BusinessLogic\obj\Debug\POC.BusinessLogic.pdb
 C:\Users\Darwin\documents\visual studio 2017\Projects\POC\POC.BusinessLogic\bin\Debug\POC.Configuration.dll.config
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.BusinessLogic.dll.config
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.BusinessLogic.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.BusinessLogic.pdb
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.CMDB.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.EMDB.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.UAMDB.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.ViewModel.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.Configuration.dll
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.CMDB.pdb
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.CMDB.dll.config
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.EMDB.pdb
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.EMDB.dll.config
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.UAMDB.pdb
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.EntityFramework.UAMDB.dll.config
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.ViewModel.pdb
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.ViewModel.dll.config
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.Configuration.pdb
+C:\Project\Repo\POC\POC.BusinessLogic\bin\Debug\POC.Configuration.dll.config
+C:\Project\Repo\POC\POC.BusinessLogic\obj\Debug\POC.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Project\Repo\POC\POC.BusinessLogic\obj\Debug\POC.BusinessLogic.dll
+C:\Project\Repo\POC\POC.BusinessLogic\obj\Debug\POC.BusinessLogic.pdb

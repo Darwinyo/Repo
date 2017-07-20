@@ -1,6 +1,7 @@
+
 import { UserLoginModel } from './../../models/user-login/user-login.model';
 import {UserLoginStateModel} from '../../models/user-login/user-login-state.model'
-
+import { TokenAuthModel } from "../../models/user-login/token-auth.model";
 // Angular Dependencies
 import { Http, Headers } from '@angular/http';
 import { Injectable, Inject } from '@angular/core';
@@ -19,9 +20,10 @@ export class UserLoginService {
 			.post('http://localhost:51150/api/APIAuthentication/AuthorizeUser/', userLoginModel, { headers: headers })
 			.map((result) => result.json());
 	}
-	sessionUser(tokenId:string):Observable<boolean>{
+	sessionUser(tokenId:TokenAuthModel):Observable<boolean>{
 		let headers = new Headers();
 		headers.append('Content-Type', 'application/json');
+		console.log(tokenId);
 		return this.http
 			.post('http://localhost:51150/api/APIAuthentication/SessionAuth/', tokenId, { headers: headers })
 			.map((result) => result.json());

@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
 import { Subscription } from 'rxjs/Subscription';
 
+import { TokenAuthModel } from "./models/user-login/token-auth.model";
+
 import { LoginStateModel } from './states/login/models/login-state.model';
 
 import * as LoginActions from './actions/login/login.action';
@@ -18,15 +20,16 @@ import { UserLoginService } from './services/authorize/user-login.service';
 })
 export class AppComponent implements OnInit, OnDestroy, OnChanges {
 	ngOnChanges(changes: SimpleChanges): void {
-		this.authService.sessionUser(localStorage.getItem('tokenid').toString()).subscribe(
-			(x) => (this.authToken = x),
-			(err) => console.log(err),
-			() => {
-				if (this.authToken == true) {
-					this.CheckUserToken(this.authToken);
-				}
-			}
-		)
+		// this.authService.sessionUser(localStorage.getItem('tokenid').toString()).subscribe(
+		// 	(x) => (this.authToken = x),
+		// 	(err) => console.log(err),
+		// 	() => {
+		// 		if (this.authToken == true) {
+		// 			this.CheckUserToken(this.authToken);
+		// 		}
+		// 	}
+		// )
+		console.log('ngChange called');
 	}
 	loginStateObservable: Observable<LoginStateModel>;
 	loginState: LoginStateModel;
@@ -49,8 +52,13 @@ export class AppComponent implements OnInit, OnDestroy, OnChanges {
 			this.store.dispatch({ type: LoginActions.LOAD_SESSION, payload: sessionState });
 		}
 	}
+	LogoutEventHandler(event:boolean){
+		this.isLogged=event;
+	}
 	ngOnInit(): void {
-		this.authService.sessionUser(localStorage.getItem('tokenid').toString()).subscribe(
+		let tokenId:TokenAuthModel=<TokenAuthModel>{};
+		tokenId.TokenId=localStorage.getItem('tokenid');
+		this.authService.sessionUser(tokenId).subscribe(
 			(x) => (this.authToken = x),
 			(err) => console.log(err),
 			() => {

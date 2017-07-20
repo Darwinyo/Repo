@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var login_action_1 = require("../../../actions/login/login.action");
 exports.INITIAL_STATE = {
     UserName: undefined,

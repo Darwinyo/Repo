@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var module_access_model_1 = require("../../states/menu/models/module-access.model");
 var ModuleAccessActions = require("../../actions/menu/module-access.action");
 function ModuleReducer(state, action) {

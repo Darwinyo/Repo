@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var store_1 = require("@ngrx/store");
 var LoginActions = require("./actions/login/login.action");
@@ -24,6 +25,16 @@ var AppComponent = (function () {
         this.loginStateObservable = this.store.select('login');
     }
     AppComponent.prototype.ngOnChanges = function (changes) {
+        // this.authService.sessionUser(localStorage.getItem('tokenid').toString()).subscribe(
+        // 	(x) => (this.authToken = x),
+        // 	(err) => console.log(err),
+        // 	() => {
+        // 		if (this.authToken == true) {
+        // 			this.CheckUserToken(this.authToken);
+        // 		}
+        // 	}
+        // )
+        console.log('ngChange called');
     };
     AppComponent.prototype.CheckUserToken = function (bool) {
         if (bool) {
@@ -35,17 +46,15 @@ var AppComponent = (function () {
             this.store.dispatch({ type: LoginActions.LOAD_SESSION, payload: sessionState });
         }
     };
-    AppComponent.prototype.TokenInit = function () {
-        var _this = this;
-        if (localStorage.getItem('tokenid') != null) {
-            this.authService
-                .sessionUser(localStorage.getItem('tokenid').toString())
-                .subscribe(function (x) { return (_this.authToken = x); }, function (err) { return console.log(err); }, function () { return _this.CheckUserToken(_this.authToken); });
-        }
-    };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.TokenInit();
+        var tokenId = {};
+        tokenId.TokenId = localStorage.getItem('tokenid');
+        this.authService.sessionUser(tokenId).subscribe(function (x) { return (_this.authToken = x); }, function (err) { return console.log(err); }, function () {
+            if (_this.authToken == true) {
+                _this.CheckUserToken(_this.authToken);
+            }
+        });
         this.stateSubscription = this.loginStateObservable.subscribe(function (result) { return _this.ValidateUserState(result); });
     };
     AppComponent.prototype.ngOnDestroy = function () { };
