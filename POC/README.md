@@ -9,21 +9,23 @@
     *  navigate to this Project for more details...
     
   
+  
 - POC.API Project it just has API Controllers on it
 
     *  it role is dealing with Products Data
     
   
+  
 - POC.ViewModel just a simple Class library
+
 
 
 - POC.BusinessLogic is dealing with data manipulation process.
 
  
-- Each POC.EntityFramework it role to comunicate with DB
+ 
+- Each POC.EntityFramework.* it role to comunicate with DB
 
  
+ 
 - POC.Configuration Make Connection Strings
-
- 
-- POC.
