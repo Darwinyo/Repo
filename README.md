@@ -1,8 +1,7 @@
-# Repo
-Angular4+Net Framework
-Project Overview
+# Project Overview
  
-POC project is the main project. its has 1 controller MVC which has my front end framework (ANGULAR 4)
-POC > ClientApp folder is Angular Files...
+POC folder is the main project.
+POC.SQL folder include databases backup.
  
-POC.API are 
+I'm using 3 separate database which has different role for each.
+navigate to POC folder for more Main Project details.
